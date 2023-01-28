@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tournamentLabel = new System.Windows.Forms.Label();
+            this.headerLabel = new System.Windows.Forms.Label();
             this.tournamentNameLabel = new System.Windows.Forms.Label();
             this.roundLabel = new System.Windows.Forms.Label();
             this.roundDropDown = new System.Windows.Forms.ComboBox();
@@ -44,16 +44,16 @@
             this.scoreBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // tournamentLabel
+            // headerLabel
             // 
-            this.tournamentLabel.AutoSize = true;
-            this.tournamentLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tournamentLabel.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.tournamentLabel.Location = new System.Drawing.Point(33, 43);
-            this.tournamentLabel.Name = "tournamentLabel";
-            this.tournamentLabel.Size = new System.Drawing.Size(184, 41);
-            this.tournamentLabel.TabIndex = 0;
-            this.tournamentLabel.Text = "Tournament:";
+            this.headerLabel.AutoSize = true;
+            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.headerLabel.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.headerLabel.Location = new System.Drawing.Point(33, 43);
+            this.headerLabel.Name = "headerLabel";
+            this.headerLabel.Size = new System.Drawing.Size(184, 41);
+            this.headerLabel.TabIndex = 0;
+            this.headerLabel.Text = "Tournament:";
             // 
             // tournamentNameLabel
             // 
@@ -214,7 +214,7 @@
             this.Controls.Add(this.roundDropDown);
             this.Controls.Add(this.roundLabel);
             this.Controls.Add(this.tournamentNameLabel);
-            this.Controls.Add(this.tournamentLabel);
+            this.Controls.Add(this.headerLabel);
             this.Name = "TournamentViewerForm";
             this.Text = "TournamentForm";
             this.Load += new System.EventHandler(this.TournamentViewerForm_Load);
@@ -225,7 +225,7 @@
 
         #endregion
 
-        private Label tournamentLabel;
+        private Label headerLabel;
         private Label tournamentNameLabel;
         private Label roundLabel;
         private ComboBox roundDropDown;
