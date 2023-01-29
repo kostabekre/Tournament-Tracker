@@ -1,6 +1,6 @@
-﻿using TrackerLibrary.Model;
+﻿using TrackerLibrary.Models;
 
-namespace TrackerLibrary
+namespace TrackerLibrary.DataAccess
 {
     public interface IDataConnection
     {

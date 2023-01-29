@@ -1,4 +1,4 @@
-﻿namespace TrackerLibrary.Model
+﻿namespace TrackerLibrary.Models
 {
     public class TournamentModel
     {
