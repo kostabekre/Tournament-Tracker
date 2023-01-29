@@ -2,6 +2,7 @@
 {
     public class PrizeModel
     {
+        public int Id { get; set; }
         /// <summary>
         /// Represents the place a team should take to get the price.
         /// </summary>
