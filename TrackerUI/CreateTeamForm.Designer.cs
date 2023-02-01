@@ -35,15 +35,15 @@
             this.selectTeamMemberDropDown = new System.Windows.Forms.ComboBox();
             this.selectTeamMemberLabel = new System.Windows.Forms.Label();
             this.addNewMemberGroupBox = new System.Windows.Forms.GroupBox();
-            this.firstNameValue = new System.Windows.Forms.TextBox();
-            this.firstNameLabel = new System.Windows.Forms.Label();
-            this.lastNameValue = new System.Windows.Forms.TextBox();
-            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.createMemberBtn = new System.Windows.Forms.Button();
             this.cellphoneValue = new System.Windows.Forms.TextBox();
             this.cellphoneLabel = new System.Windows.Forms.Label();
             this.emailValue = new System.Windows.Forms.TextBox();
             this.emailLabel = new System.Windows.Forms.Label();
-            this.createMemberBtn = new System.Windows.Forms.Button();
+            this.lastNameValue = new System.Windows.Forms.TextBox();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.firstNameValue = new System.Windows.Forms.TextBox();
+            this.firstNameLabel = new System.Windows.Forms.Label();
             this.teamMembersListBox = new System.Windows.Forms.ListBox();
             this.deleteSelectedMemberBtn = new System.Windows.Forms.Button();
             this.createTeamBtn = new System.Windows.Forms.Button();
@@ -136,45 +136,21 @@
             this.addNewMemberGroupBox.TabStop = false;
             this.addNewMemberGroupBox.Text = "Add New Member";
             // 
-            // firstNameValue
+            // createMemberBtn
             // 
-            this.firstNameValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.firstNameValue.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.firstNameValue.Location = new System.Drawing.Point(121, 38);
-            this.firstNameValue.Name = "firstNameValue";
-            this.firstNameValue.Size = new System.Drawing.Size(150, 32);
-            this.firstNameValue.TabIndex = 22;
-            // 
-            // firstNameLabel
-            // 
-            this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.firstNameLabel.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.firstNameLabel.Location = new System.Drawing.Point(9, 40);
-            this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(106, 25);
-            this.firstNameLabel.TabIndex = 21;
-            this.firstNameLabel.Text = "First Name:";
-            // 
-            // lastNameValue
-            // 
-            this.lastNameValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lastNameValue.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.lastNameValue.Location = new System.Drawing.Point(121, 80);
-            this.lastNameValue.Name = "lastNameValue";
-            this.lastNameValue.Size = new System.Drawing.Size(150, 32);
-            this.lastNameValue.TabIndex = 24;
-            // 
-            // lastNameLabel
-            // 
-            this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lastNameLabel.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.lastNameLabel.Location = new System.Drawing.Point(9, 82);
-            this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(104, 25);
-            this.lastNameLabel.TabIndex = 23;
-            this.lastNameLabel.Text = "Last Name:";
+            this.createMemberBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.createMemberBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.createMemberBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.createMemberBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createMemberBtn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.createMemberBtn.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.createMemberBtn.Location = new System.Drawing.Point(69, 213);
+            this.createMemberBtn.Name = "createMemberBtn";
+            this.createMemberBtn.Size = new System.Drawing.Size(167, 41);
+            this.createMemberBtn.TabIndex = 21;
+            this.createMemberBtn.Text = "Create Member";
+            this.createMemberBtn.UseVisualStyleBackColor = true;
+            this.createMemberBtn.Click += new System.EventHandler(this.createMemberBtn_Click);
             // 
             // cellphoneValue
             // 
@@ -216,20 +192,45 @@
             this.emailLabel.TabIndex = 25;
             this.emailLabel.Text = "Email:";
             // 
-            // createMemberBtn
+            // lastNameValue
             // 
-            this.createMemberBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.createMemberBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.createMemberBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.createMemberBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createMemberBtn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.createMemberBtn.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.createMemberBtn.Location = new System.Drawing.Point(69, 213);
-            this.createMemberBtn.Name = "createMemberBtn";
-            this.createMemberBtn.Size = new System.Drawing.Size(167, 41);
-            this.createMemberBtn.TabIndex = 21;
-            this.createMemberBtn.Text = "Create Member";
-            this.createMemberBtn.UseVisualStyleBackColor = true;
+            this.lastNameValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lastNameValue.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.lastNameValue.Location = new System.Drawing.Point(121, 80);
+            this.lastNameValue.Name = "lastNameValue";
+            this.lastNameValue.Size = new System.Drawing.Size(150, 32);
+            this.lastNameValue.TabIndex = 24;
+            // 
+            // lastNameLabel
+            // 
+            this.lastNameLabel.AutoSize = true;
+            this.lastNameLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lastNameLabel.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.lastNameLabel.Location = new System.Drawing.Point(9, 82);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(104, 25);
+            this.lastNameLabel.TabIndex = 23;
+            this.lastNameLabel.Text = "Last Name:";
+            // 
+            // firstNameValue
+            // 
+            this.firstNameValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.firstNameValue.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.firstNameValue.Location = new System.Drawing.Point(121, 38);
+            this.firstNameValue.Name = "firstNameValue";
+            this.firstNameValue.Size = new System.Drawing.Size(150, 32);
+            this.firstNameValue.TabIndex = 22;
+            // 
+            // firstNameLabel
+            // 
+            this.firstNameLabel.AutoSize = true;
+            this.firstNameLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.firstNameLabel.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.firstNameLabel.Location = new System.Drawing.Point(9, 40);
+            this.firstNameLabel.Name = "firstNameLabel";
+            this.firstNameLabel.Size = new System.Drawing.Size(106, 25);
+            this.firstNameLabel.TabIndex = 21;
+            this.firstNameLabel.Text = "First Name:";
             // 
             // teamMembersListBox
             // 

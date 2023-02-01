@@ -2,6 +2,7 @@
 {
     public class PersonModel
     {
+        public int Id { get; set; }
         /// <summary>
         /// The person's first name.
         /// </summary>
