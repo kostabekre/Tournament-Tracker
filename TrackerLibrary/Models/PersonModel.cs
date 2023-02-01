@@ -11,6 +11,7 @@
         /// The person's last name.
         /// </summary>
         public string LastName { get; set; }
+        public string FullName => $"{FirstName} {LastName}";
         /// <summary>
         /// The email address to contact the person.
         /// </summary>
