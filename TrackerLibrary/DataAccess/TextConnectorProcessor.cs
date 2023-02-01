@@ -1,4 +1,5 @@
 ﻿using System.Configuration;
+using System.Drawing;
 using TrackerLibrary.Models;
 
 namespace TrackerLibrary.DataAccess.TextHelpers
@@ -40,7 +41,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             return File.ReadAllLines(fullFileName).ToList();
         }
 
-        public static List<PrizeModel> ConvertToPirzeModels(this List<string> lines)
+        public static List<PrizeModel> ConvertToPrizeModels(this List<string> lines)
         {
             var output = new List<PrizeModel>();
 
@@ -61,7 +62,28 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             return output;
         }
 
-        public static void SaveToPrizeFile(this List<PrizeModel> models, string fileName)
+        public static List<PersonModel> ConvertToPersonModels(this List<string> lines)
+        {
+            var output = new List<PersonModel>();
+
+            foreach(var line in lines)
+            {
+                string[] cols = line.Split(',');
+
+                 var p = new PersonModel();
+                p.Id = int.Parse(cols[0]);
+                p.FirstName = cols[1];
+                p.LastName = cols[2];
+                p.EmailAddress= cols[3];
+                p.CellphoneNumber = cols[4];
+
+                output.Add(p);
+            }
+
+            return output;
+        }
+
+        public static void SaveToPrizesFile(this List<PrizeModel> models, string fileName)
         {
             List<string> lines = new List<string>();
 
@@ -71,6 +93,19 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             }
 
             File.WriteAllLines(fileName.FullFilePath(), lines);
+        }
+
+        public static void SaveToPeopleFile(this List<PersonModel> models, string fileName)
+        {
+            List<string> lines = new List<string>();
+
+            foreach (var p in models)
+            {
+                lines.Add($"{p.Id},{p.FirstName},{p.LastName},{p.EmailAddress},{p.CellphoneNumber}");
+            }
+
+            File.WriteAllLines(fileName.FullFilePath(), lines);
+
         }
     }
 }
