@@ -2,6 +2,7 @@
 {
     public class MatchupModel
     {
+        public int Id { get; set; }
         /// <summary>
         /// Two teams that compete with each other.
         /// </summary>

@@ -2,6 +2,7 @@
 {
     public class TournamentModel
     {
+        public int Id { get; set; }
         /// <summary>
         /// Represents how the tournament is called.
         /// </summary>
