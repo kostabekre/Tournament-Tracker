@@ -109,6 +109,7 @@ namespace TrackerUI
             tm.EnteredTeams = selectedTeams;
 
             //TODO Wireup matchups
+            TournamentLogic.CreateRounds(tm);
 
             GlobalConfig.Connection.CreateTournament(tm);
 

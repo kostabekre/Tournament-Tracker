@@ -6,7 +6,7 @@
         /// <summary>
         /// Two teams that compete with each other.
         /// </summary>
-        public List<MatchupModel> Entries { get; set; } = new List<MatchupModel>();
+        public List<MatchupEntryModel> Entries { get; set; } = new List<MatchupEntryModel>();
         /// <summary>
         /// Who is the winner in the matchup.
         /// </summary>
