@@ -2,6 +2,7 @@
 {
     public class MatchupEntryModel
     {
+        public int Id { get; set; }
         /// <summary>
         /// Represents one team in match up.
         /// </summary>
