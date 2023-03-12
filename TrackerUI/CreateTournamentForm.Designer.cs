@@ -1,6 +1,6 @@
 ﻿namespace TrackerUI
 {
-    partial class CreateTournament
+    partial class CreateTournamentForm
     {
         /// <summary>
         /// Required designer variable.

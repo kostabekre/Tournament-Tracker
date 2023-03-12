@@ -8,6 +8,10 @@
         /// </summary>
         public List<MatchupEntryModel> Entries { get; set; } = new List<MatchupEntryModel>();
         /// <summary>
+        /// The Id from the database that will be used to identify the winnder.
+        /// </summary>
+        public int WinnderId { get; set; }
+        /// <summary>
         /// Who is the winner in the matchup.
         /// </summary>
         public TeamModel Winner { get; set; }
