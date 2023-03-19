@@ -19,5 +19,35 @@
         /// The round number in the tournament.
         /// </summary>
         public int MatchupRound { get; set; }
+
+        public string DisplayName 
+        {
+            get 
+            {
+                string output = "";
+
+                foreach (MatchupEntryModel entryModel in Entries)
+                {
+                    if(entryModel.TeamCompeting != null)
+                    {
+                        if(output.Length == 0)
+                        {
+                            output = entryModel.TeamCompeting.TeamName;
+                        }
+                        else
+                        {
+                            output += $" vs. {entryModel.TeamCompeting.TeamName}";
+                        }
+                    }
+                    else
+                    {
+                        output = "Matchup Not Yet Determined";
+                        break;
+                    }
+                }
+
+                return output;
+            }
+        }
     }
 }

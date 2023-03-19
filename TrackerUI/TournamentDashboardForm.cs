@@ -18,6 +18,7 @@ namespace TrackerUI
         public TournamentDashboardForm()
         {
             InitializeComponent();
+            WireUpLists();
         }
 
         private void WireUpLists()
@@ -29,6 +30,13 @@ namespace TrackerUI
         private void CreateTournamentBtn_Click(object sender, EventArgs e)
         {
             CreateTournamentForm frm = new CreateTournamentForm();
+            frm.Show();
+        }
+
+        private void loadTournamentBtn_Click(object sender, EventArgs e)
+        {
+            TournamentModel tm = (TournamentModel)loadExistingTournamentDropDown.SelectedItem;
+            TournamentViewerForm frm = new TournamentViewerForm(tm);
             frm.Show();
         }
     }
