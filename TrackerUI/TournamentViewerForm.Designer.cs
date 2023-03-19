@@ -35,7 +35,7 @@
             unplayedOnlyCheckbox = new CheckBox();
             matchupListBox = new ListBox();
             teamOneLabel = new Label();
-            teamOneScore = new Label();
+            teamOneScoreLabel = new Label();
             teamOneScoreValue = new TextBox();
             vsLabel = new Label();
             teamTwoScoreValue = new TextBox();
@@ -98,6 +98,7 @@
             unplayedOnlyCheckbox.TabIndex = 4;
             unplayedOnlyCheckbox.Text = "Unplayed Only";
             unplayedOnlyCheckbox.UseVisualStyleBackColor = true;
+            unplayedOnlyCheckbox.CheckedChanged += unplayedOnlyCheckbox_CheckedChanged;
             // 
             // matchupListBox
             // 
@@ -120,16 +121,16 @@
             teamOneLabel.TabIndex = 6;
             teamOneLabel.Text = "<team one>";
             // 
-            // teamOneScore
+            // teamOneScoreLabel
             // 
-            teamOneScore.AutoSize = true;
-            teamOneScore.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            teamOneScore.ForeColor = Color.LightSeaGreen;
-            teamOneScore.Location = new Point(374, 268);
-            teamOneScore.Name = "teamOneScore";
-            teamOneScore.Size = new Size(77, 35);
-            teamOneScore.TabIndex = 7;
-            teamOneScore.Text = "Score";
+            teamOneScoreLabel.AutoSize = true;
+            teamOneScoreLabel.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            teamOneScoreLabel.ForeColor = Color.LightSeaGreen;
+            teamOneScoreLabel.Location = new Point(374, 268);
+            teamOneScoreLabel.Name = "teamOneScoreLabel";
+            teamOneScoreLabel.Size = new Size(77, 35);
+            teamOneScoreLabel.TabIndex = 7;
+            teamOneScoreLabel.Text = "Score";
             // 
             // teamOneScoreValue
             // 
@@ -196,6 +197,7 @@
             scoreBtn.TabIndex = 13;
             scoreBtn.Text = "SCORE";
             scoreBtn.UseVisualStyleBackColor = true;
+            scoreBtn.Click += scoreBtn_Click;
             // 
             // TournamentViewerForm
             // 
@@ -209,7 +211,7 @@
             Controls.Add(teamTwoLabel);
             Controls.Add(vsLabel);
             Controls.Add(teamOneScoreValue);
-            Controls.Add(teamOneScore);
+            Controls.Add(teamOneScoreLabel);
             Controls.Add(teamOneLabel);
             Controls.Add(matchupListBox);
             Controls.Add(unplayedOnlyCheckbox);
@@ -233,7 +235,7 @@
         private CheckBox unplayedOnlyCheckbox;
         private ListBox matchupListBox;
         private Label teamOneLabel;
-        private Label teamOneScore;
+        private Label teamOneScoreLabel;
         private TextBox teamOneScoreValue;
         private Label vsLabel;
         private TextBox teamTwoScoreValue;
