@@ -149,10 +149,10 @@ namespace TrackerLibrary.DataAccess.TextHelpers
 
                 //Capture rounds information
                 string[] rounds = cols[5].Split("|");
-                List<MatchupModel> ms = new List<MatchupModel>();
 
                 foreach (string round in rounds)
                 {
+                    List<MatchupModel> ms = new List<MatchupModel>();
                     string[] msText = round.Split("^");
 
                     foreach (string matchupModelTextId in msText)
@@ -267,6 +267,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                     if (cols[0] == id)
                     {
                         matchingEntries.Add(entry);
+                        break;
                     }
                 }
             }
@@ -428,7 +429,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
 
             foreach (MatchupEntryModel e in entries)
             {
-                output += $"{e.Id}";
+                output += $"{e.Id}|";
             }
 
             output = output.Substring(0, output.Length - 1);
