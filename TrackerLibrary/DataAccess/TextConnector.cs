@@ -5,6 +5,18 @@ namespace TrackerLibrary.DataAccess
 {
     public class TextConnector : IDataConnection
     {
+        public void CompleteTournament(TournamentModel model)
+        {
+            List<TournamentModel> tournaments = GlobalConfig.TournamentFile.
+                FullFilePath().
+                LoadFile().
+                ConvertToTournamentModels();
+
+            tournaments.Remove(model);
+
+            tournaments.SaveToTournamentFile();
+        }
+
         public void CreatePerson(PersonModel model)
         {
             var people = GlobalConfig.PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();

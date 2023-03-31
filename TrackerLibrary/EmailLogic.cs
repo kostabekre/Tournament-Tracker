@@ -7,11 +7,26 @@ namespace TrackerLibrary
     {
         public static void SendEmail(string to, string subject, string body)
         {
+            SendEmail(new List<string>{to}, subject, body);
+        }
+        public static void SendEmail(List<string> to, string subject, string body, List<string>? bcc = null)
+        {
             MailAddress fromMailAddress = new MailAddress(GlobalConfig.AppKeyLookup("SenderEmail"));
 
             MailMessage mail = new MailMessage();
 
-            mail.To.Add(to);
+            foreach(string email in to)
+            {
+                mail.To.Add(email);
+            }
+
+            if(bcc != null)
+            {
+                foreach(string email in bcc)
+                {
+                    mail.Bcc.Add(email);
+                }
+            }
             mail.From = fromMailAddress;
             mail.Subject = subject;
             mail.Body = body;
@@ -22,7 +37,15 @@ namespace TrackerLibrary
             client.Host = "localhost";
             client.Port = 25;
 
-            client.Send(mail);
+            try
+            {
+
+                client.Send(mail);
+            }
+            catch (SmtpException ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }

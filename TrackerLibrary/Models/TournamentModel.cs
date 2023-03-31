@@ -2,6 +2,7 @@
 {
     public class TournamentModel
     {
+        public event EventHandler<DateTime> OnTournamentComplete;
         public int Id { get; set; }
         /// <summary>
         /// Represents how the tournament is called.
@@ -23,5 +24,10 @@
         /// All rounds in the tournament.
         /// </summary>
         public List<List<MatchupModel>> Rounds { get; set; } = new List<List<MatchupModel>>();
+
+        public void CompleteTournament()
+        {
+            OnTournamentComplete?.Invoke(this, DateTime.Now);
+        }
     }
 }
